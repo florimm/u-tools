@@ -1,5 +1,9 @@
 # 🧰 u-tools (Universal Tools)
 
+## 🤖 Copilot & AI Instructions
+
+This repository includes a `copilot-instruction` file at the root. It provides guidance for GitHub Copilot and other AI coding assistants on coding standards, architectural decisions, and contribution requirements. Please review it before contributing or using AI tools in this repo.
+
 A fast, modular collection of **web tools** — from unit converters and ping to dev utilities — with a future **drag-and-drop canvas** that lets you **connect tools visually** (like Linux pipes, but in your browser).
 
 ---
