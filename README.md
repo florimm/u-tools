@@ -41,17 +41,22 @@ u-tools/
 
 ### Prerequisites
 
-- Node.js 18+ and pnpm (or npm)
+- Node.js 18+ and npm
 - .NET 8 SDK
 
 ### 1️⃣ Clone and Install
 ```bash
-git clone https://github.com/yourusername/u-tools.git
+git clone https://github.com/florimm/u-tools.git
 cd u-tools
-pnpm install
 ```
 
-### 2️⃣ Run the API
+### 2️⃣ Install Frontend Dependencies
+```bash
+cd apps/web
+npm install
+```
+
+### 3️⃣ Run the API
 ```bash
 cd apps/api
 dotnet restore
@@ -59,10 +64,10 @@ dotnet run
 # Runs on http://localhost:5000
 ```
 
-### 3️⃣ Run the Web App
+### 4️⃣ Run the Web App
 ```bash
 cd apps/web
-pnpm dev
+npm run dev
 # Opens http://localhost:5173
 ```
 

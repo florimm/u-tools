@@ -1,0 +1,19 @@
+{
+  "id": "converters.unit",
+  "name": "Unit Converter",
+  "version": "1.0.0",
+  "category": "Converters",
+  "frontend": { "module": "./frontend.tsx" },
+  "backend": { "entry": "./backend.cs", "basePath": "/tools/converters/unit" },
+  "io": {
+    "inputs": [
+      { "name": "value", "type": "number", "required": true },
+      { "name": "from", "type": "string", "enum": ["m", "km", "ft", "mi"], "required": true },
+      { "name": "to", "type": "string", "enum": ["m", "km", "ft", "mi"], "required": true }
+    ],
+    "outputs": [
+      { "name": "result", "type": "number" }
+    ]
+  },
+  "ui": { "icon": "📏", "tags": ["convert", "units"] }
+}

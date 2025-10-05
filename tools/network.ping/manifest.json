@@ -1,0 +1,19 @@
+{
+  "id": "network.ping",
+  "name": "Network Ping",
+  "version": "1.0.0",
+  "category": "Network",
+  "frontend": { "module": "./frontend.tsx" },
+  "backend": { "entry": "./backend.cs", "basePath": "/tools/network/ping" },
+  "io": {
+    "inputs": [
+      { "name": "host", "type": "string", "required": true },
+      { "name": "count", "type": "number", "required": false }
+    ],
+    "outputs": [
+      { "name": "rttMs", "type": "number" },
+      { "name": "success", "type": "boolean" }
+    ]
+  },
+  "ui": { "icon": "🌐", "tags": ["network", "ping", "latency"] }
+}
