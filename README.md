@@ -62,6 +62,7 @@ cd apps/api
 dotnet restore
 dotnet run
 # Runs on http://localhost:5000
+# Swagger UI available at http://localhost:5000/swagger
 ```
 
 ### 4️⃣ Run the Web App
@@ -70,6 +71,14 @@ cd apps/web
 npm run dev
 # Opens http://localhost:5173
 ```
+
+### 🔍 API Documentation
+
+The API includes interactive Swagger UI documentation:
+- **Swagger UI**: http://localhost:5000/swagger
+- **OpenAPI JSON**: http://localhost:5000/swagger/v1/swagger.json
+
+Use the Swagger UI to explore and test all available endpoints interactively.
 
 ---
 

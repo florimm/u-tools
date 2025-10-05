@@ -35,7 +35,22 @@ public static class Endpoints
             return Results.Ok(new { result = Math.Round(result, 6) });
         })
         .WithName("ConvertUnits")
-        .WithSummary("Convert between different units of measurement");
+        .WithSummary("Convert between different units of measurement")
+        .WithDescription("Converts a numeric value from one unit to another. Supports length conversions including meters (m), kilometers (km), feet (ft), and miles (mi).")
+        .WithOpenApi(operation => new(operation)
+        {
+            Tags = new List<Microsoft.OpenApi.Models.OpenApiTag> { new() { Name = "Unit Converter" } },
+            RequestBody = new()
+            {
+                Description = "Conversion request containing the value and source/target units",
+                Required = true
+            },
+            Responses = new()
+            {
+                ["200"] = new() { Description = "Successful conversion with the converted result" },
+                ["400"] = new() { Description = "Invalid input (negative value or unsupported units)" }
+            }
+        });
 
         return app;
     }
