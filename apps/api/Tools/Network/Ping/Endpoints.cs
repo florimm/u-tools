@@ -52,7 +52,22 @@ public static class Endpoints
             }
         })
         .WithName("PingHost")
-        .WithSummary("Ping a network host to test connectivity and measure latency");
+        .WithSummary("Ping a network host to test connectivity and measure latency")
+        .WithDescription("Sends an ICMP ping to the specified host and returns the round-trip time and success status. Useful for testing network connectivity and measuring latency.")
+        .WithOpenApi(operation => new(operation)
+        {
+            Tags = new List<Microsoft.OpenApi.Models.OpenApiTag> { new() { Name = "Network Tools" } },
+            RequestBody = new()
+            {
+                Description = "Ping request containing the target host (hostname, domain, or IP address)",
+                Required = true
+            },
+            Responses = new()
+            {
+                ["200"] = new() { Description = "Ping completed (check 'success' field for actual result)" },
+                ["400"] = new() { Description = "Invalid input (empty host or ping failure)" }
+            }
+        });
 
         return app;
     }
